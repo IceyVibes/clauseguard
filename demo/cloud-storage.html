@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CloudNest Free - ClauseGuard Scenario</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="cloud-storage" data-clauseguard-title="CloudNest Free">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brand. Not a real company. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <div id="cg-judge-banner" class="cg-judge-bar" style="display:none;"></div>
+
+  <header class="cg-scenario-header" style="background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);">
+    <h1>☁️ CloudNest Free</h1>
+    <p>Free personal cloud storage</p>
+    <div class="cg-scenario-meta">
+      <span>User story: A user wants free online backup for photos and documents.</span>
+      <span>Demo tension: Free storage versus retention, storage limits and service-control conditions.</span>
+    </div>
+  </header>
+
+  <div class="cg-scenario-layout">
+    <section class="cg-panel">
+      <h2>Terms and Conditions</h2>
+      <p id="cg-reading-time" class="cg-reading-time"></p>
+      <div class="cg-terms-box">
+        <p class="tc-clause" data-clause-id="1">You retain ownership of all files you upload to CloudNest.</p>
+        <p class="tc-clause" data-clause-id="2">You may download your files at any time while your account remains active.</p>
+        <p class="tc-clause" data-clause-id="3">You can request deletion of your CloudNest account and associated files.</p>
+        <p class="tc-clause" data-clause-id="4">File metadata, such as file size and type, may be analyzed to improve storage performance.</p>
+        <p class="tc-clause" data-clause-id="5">Your files may be processed using third-party infrastructure and analytics providers.</p>
+        <p class="tc-clause" data-clause-id="6">Deleted files may be retained temporarily in backup systems before permanent removal.</p>
+        <p class="tc-clause" data-clause-id="7">Free accounts are limited to a fixed amount of storage space.</p>
+        <p class="tc-clause" data-clause-id="8">Paid storage plans renew automatically at the end of each billing period.</p>
+        <p class="tc-clause" data-clause-id="9">We may change paid-plan prices for future billing periods with advance notice.</p>
+        <p class="tc-clause" data-clause-id="10">Inactive accounts may be deleted after notice is sent to your registered email.</p>
+        <p class="tc-clause" data-clause-id="11">We may restrict access to your account while investigating suspected misuse.</p>
+        <p class="tc-clause" data-clause-id="12">We retain a limited operational licence to process your uploaded files in order to provide the service.</p>
+      </div>
+    </section>
+
+    <aside class="cg-sidebar">
+      <div class="cg-panel cg-signup-form">
+        <h2>Create your account</h2>
+        <p style="font-size:0.78rem;color:#5b6072;">Demo only &mdash; nothing typed here is sent anywhere.</p>
+        <label for="cg-name">Display name</label>
+        <input type="text" id="cg-name" placeholder="e.g. Jordan" autocomplete="off" />
+        <label for="cg-email">Email</label>
+        <input type="email" id="cg-email" placeholder="e.g. jordan@example.com" autocomplete="off" />
+
+        <div class="cg-checkbox-row">
+          <input type="checkbox" id="cg-accept-checkbox" />
+          <label for="cg-accept-checkbox">I have reviewed the Terms and Conditions above.</label>
+        </div>
+        <p id="cg-elapsed-timer" class="cg-elapsed-timer"></p>
+        <p id="cg-review-nudge" class="cg-review-nudge"></p>
+
+        <button id="cg-primary-action" class="cg-btn cg-btn-primary" style="width:100%;margin-top:14px;" disabled>
+          Create Free Cloud Account
+        </button>
+        <p class="cg-fine-print">
+          This fictional button never submits real data. Use the extension's
+          "Scan Terms Before Accepting" button to analyze the clauses above.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="cg-footer">
+    CloudNest Free is a fictional brand created for the ClauseGuard student hackathon prototype.
+  </footer>
+
+  <script src="demo.js"></script>
+  <script>
+    ClauseGuardDemo.initScenarioPage({});
+  </script>
+</body>
+</html>

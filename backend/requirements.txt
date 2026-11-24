@@ -1,0 +1,14 @@
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.29,<1.0
+sentence-transformers>=2.7,<3.0
+scikit-learn>=1.4,<2.0
+pandas>=2.1,<3.0
+joblib>=1.3,<2.0
+pytest>=8.0,<9.0
+httpx>=0.27,<1.0
+pydantic>=2.6,<3.0
+
+# Optional, dev-only: only needed to run
+# backend/scripts/build_realsite_cache.py (rebuilds the real-site demo
+# cache). Not required to run the API or the test suite.
+# pip install playwright && playwright install chromium

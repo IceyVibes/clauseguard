@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+backend/models/minilm
+backend/models/clause_classifier.joblib
+tests/
+playwright-tests/
+node_modules/
+*.log
+.pytest_cache/
+.DS_Store

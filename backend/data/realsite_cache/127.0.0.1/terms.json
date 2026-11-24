@@ -1,0 +1,10 @@
+{
+  "source_url": "http://127.0.0.1:5500/_fixtures/terms.html",
+  "clauses": [
+    "Your subscription will renew automatically every month until you cancel it from your account settings page.",
+    "Previously processed payments are non-refundable except where required by applicable law in your jurisdiction.",
+    "Disputes arising from this agreement will be resolved through individual binding arbitration rather than in court.",
+    "You may cancel your FixtureCo account at any time without providing a reason to our support team.",
+    "We may suspend accounts that we believe have violated the FixtureCo community guidelines or platform rules."
+  ]
+}

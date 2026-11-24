@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ClauseGuard - Real-World Scenario Lab</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="gallery" data-clauseguard-title="Scenario Lab">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brands only. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html" class="active">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <div id="cg-judge-bar-top" class="cg-judge-bar" style="display:none;"></div>
+
+  <main class="cg-container">
+    <section class="cg-hero">
+      <h1>The fastest click online is often the least informed.</h1>
+      <p>
+        Most registration journeys make joining easy, while reviewing every
+        contractual clause takes time. Select a fictional scenario and see
+        how a locally running student-trained model can identify clauses
+        that may deserve attention before acceptance.
+      </p>
+      <div class="cg-challenge-card">
+        <strong>Demo challenge:</strong> Can you identify the clauses that
+        deserve attention before clicking Accept?
+      </div>
+      <div class="cg-judge-toggle">
+        <label for="cg-judge-toggle-checkbox">
+          <input type="checkbox" id="cg-judge-toggle-checkbox" />
+          Judge Mode
+        </label>
+      </div>
+    </section>
+
+    <section class="cg-grid">
+      <article class="cg-card">
+        <div class="cg-card-icon">🎬</div>
+        <span class="cg-difficulty">Moderate</span>
+        <h3>StreamBox Student</h3>
+        <p>Streaming subscription &mdash; free trial that converts into a recurring monthly plan.</p>
+        <a class="cg-btn cg-btn-primary" href="streaming.html">Try Scenario</a>
+      </article>
+
+      <article class="cg-card">
+        <div class="cg-card-icon">🛒</div>
+        <span class="cg-difficulty">Moderate</span>
+        <h3>QuickCart Plus</h3>
+        <p>Shopping membership &mdash; free delivery offered in exchange for an annual renewal.</p>
+        <a class="cg-btn cg-btn-primary" href="shopping.html">Try Scenario</a>
+      </article>
+
+      <article class="cg-card">
+        <div class="cg-card-icon">🏋️</div>
+        <span class="cg-difficulty">Challenging</span>
+        <h3>FitLife Pro</h3>
+        <p>Fitness application &mdash; personalization benefits paired with activity and location data terms.</p>
+        <a class="cg-btn cg-btn-primary" href="fitness.html">Try Scenario</a>
+      </article>
+
+      <article class="cg-card">
+        <div class="cg-card-icon">🎮</div>
+        <span class="cg-difficulty">Challenging</span>
+        <h3>ArenaQuest</h3>
+        <p>Online gaming &mdash; bonus credits alongside virtual-purchase and account-control terms.</p>
+        <a class="cg-btn cg-btn-primary" href="gaming.html">Try Scenario</a>
+      </article>
+
+      <article class="cg-card">
+        <div class="cg-card-icon">☁️</div>
+        <span class="cg-difficulty">Moderate</span>
+        <h3>CloudNest Free</h3>
+        <p>Cloud storage &mdash; free space balanced against retention and service-control conditions.</p>
+        <a class="cg-btn cg-btn-primary" href="cloud-storage.html">Try Scenario</a>
+      </article>
+
+      <article class="cg-card">
+        <div class="cg-card-icon">🎓</div>
+        <span class="cg-difficulty">Moderate</span>
+        <h3>SkillSpring Academy</h3>
+        <p>Online learning &mdash; certificate goal versus recurring charges and engagement data.</p>
+        <a class="cg-btn cg-btn-primary" href="student-learning.html">Try Scenario</a>
+      </article>
+    </section>
+
+    <div class="cg-architecture-strip">
+      Synthetic clauses -&gt; MiniLM embeddings -&gt; Student-trained classifier -&gt; Local FastAPI -&gt; Browser extension -&gt; Attention summary
+    </div>
+  </main>
+
+  <footer class="cg-footer">
+    ClauseGuard is an educational hackathon prototype using synthetic training data. Not legal advice.
+  </footer>
+
+  <script src="demo.js"></script>
+  <script>
+    ClauseGuardDemo.initGalleryJudgeToggle(
+      document.getElementById("cg-judge-toggle-checkbox"),
+      document.getElementById("cg-judge-bar-top")
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "domain": "facebook.com",
+  "site_name": "Facebook",
+  "pages": {
+    "terms": "https://www.facebook.com/terms.php",
+    "privacy": "https://www.facebook.com/privacy/policy/"
+  }
+}

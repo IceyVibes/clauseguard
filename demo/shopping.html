@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QuickCart Plus - ClauseGuard Scenario</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="shopping" data-clauseguard-title="QuickCart Plus">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brand. Not a real company. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <div id="cg-judge-banner" class="cg-judge-bar" style="display:none;"></div>
+
+  <header class="cg-scenario-header" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);">
+    <h1>🛒 QuickCart Plus</h1>
+    <p>Shopping membership with free delivery</p>
+    <div class="cg-scenario-meta">
+      <span>User story: A shopper wants free delivery during checkout and is offered a membership.</span>
+      <span>Demo tension: Immediate delivery saving versus annual renewal and shopping-data conditions.</span>
+    </div>
+  </header>
+
+  <div class="cg-scenario-layout">
+    <section class="cg-panel">
+      <h2>Terms and Conditions</h2>
+      <p id="cg-reading-time" class="cg-reading-time"></p>
+      <div class="cg-terms-box">
+        <p class="tc-clause" data-clause-id="1">You can view and manage your QuickCart Plus membership anytime from your account dashboard.</p>
+        <p class="tc-clause" data-clause-id="2">A confirmation message will appear immediately after you cancel your QuickCart Plus membership.</p>
+        <p class="tc-clause" data-clause-id="3">Delivery estimates shown at checkout are approximate and may vary by location.</p>
+        <p class="tc-clause" data-clause-id="4">Your QuickCart Plus membership renews automatically every year unless cancelled before the renewal date.</p>
+        <p class="tc-clause" data-clause-id="5">The discounted first-period membership price applies only to your initial billing cycle.</p>
+        <p class="tc-clause" data-clause-id="6">We may adjust the annual membership fee for future renewal periods.</p>
+        <p class="tc-clause" data-clause-id="7">Membership fees already charged for the current renewal period are not refundable.</p>
+        <p class="tc-clause" data-clause-id="8">Your purchase history may be shared with participating merchants to personalize offers.</p>
+        <p class="tc-clause" data-clause-id="9">Your browsing activity on partner sites may be used to show you targeted advertisements.</p>
+        <p class="tc-clause" data-clause-id="10">Your account may be associated with merchant information to enable loyalty rewards.</p>
+        <p class="tc-clause" data-clause-id="11">We may restrict your access to QuickCart Plus benefits if unusual order activity is detected.</p>
+        <p class="tc-clause" data-clause-id="12">Programme features and benefits may change at any time without individual notice.</p>
+      </div>
+    </section>
+
+    <aside class="cg-sidebar">
+      <div class="cg-panel cg-signup-form">
+        <h2>Create your account</h2>
+        <p style="font-size:0.78rem;color:#5b6072;">Demo only &mdash; nothing typed here is sent anywhere.</p>
+        <label for="cg-name">Display name</label>
+        <input type="text" id="cg-name" placeholder="e.g. Jordan" autocomplete="off" />
+        <label for="cg-email">Email</label>
+        <input type="email" id="cg-email" placeholder="e.g. jordan@example.com" autocomplete="off" />
+
+        <div class="cg-checkbox-row">
+          <input type="checkbox" id="cg-accept-checkbox" />
+          <label for="cg-accept-checkbox">I have reviewed the Terms and Conditions above.</label>
+        </div>
+        <p id="cg-elapsed-timer" class="cg-elapsed-timer"></p>
+        <p id="cg-review-nudge" class="cg-review-nudge"></p>
+
+        <button id="cg-primary-action" class="cg-btn cg-btn-primary" style="width:100%;margin-top:14px;" disabled>
+          Join Plus and Complete Order
+        </button>
+        <p class="cg-fine-print">
+          This fictional button never submits real data. Use the extension's
+          "Scan Terms Before Accepting" button to analyze the clauses above.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="cg-footer">
+    QuickCart Plus is a fictional brand created for the ClauseGuard student hackathon prototype.
+  </footer>
+
+  <script src="demo.js"></script>
+  <script>
+    ClauseGuardDemo.initScenarioPage({});
+  </script>
+</body>
+</html>

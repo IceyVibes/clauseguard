@@ -1,0 +1,9 @@
+{
+  "source_url": "http://127.0.0.1:5500/_fixtures/privacy.html",
+  "clauses": [
+    "We may share your personal information with selected advertising partners to show relevant promotions.",
+    "Your browsing activity on FixtureCo may be used to build an advertising profile associated with your account.",
+    "Some account information may be retained in backup systems for a period after you close your account.",
+    "You may request a copy of the personal information we hold about you by contacting support."
+  ]
+}

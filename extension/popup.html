@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>ClauseGuard</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="cg-popup-header">
+    <h1>🛡️ ClauseGuard</h1>
+    <p class="cg-popup-subtitle">Educational prototype &mdash; not legal advice.</p>
+  </header>
+
+  <section class="cg-popup-status">
+    <div class="cg-status-row">
+      <span>Backend</span>
+      <span id="cg-backend-status" class="cg-status-pill cg-status-unknown">Checking...</span>
+    </div>
+    <div class="cg-status-row">
+      <span>Model</span>
+      <span id="cg-model-status" class="cg-status-pill cg-status-unknown">Checking...</span>
+    </div>
+    <button id="cg-check-backend" class="cg-btn-small">Check Backend</button>
+  </section>
+
+  <section class="cg-popup-scan">
+    <h2>Scan this website</h2>
+    <p id="cg-current-domain" class="cg-popup-hint"></p>
+    <button id="cg-scan-site" class="cg-btn-small cg-btn-primary-small">
+      🔍 Scan Terms &amp; Privacy Policy
+    </button>
+    <p id="cg-scan-status" class="cg-popup-hint"></p>
+    <p id="cg-cached-sites" class="cg-popup-hint"></p>
+  </section>
+
+  <section class="cg-popup-instructions">
+    <p>On a demo scenario page, select <strong>Scan Terms Before Accepting</strong>.</p>
+  </section>
+
+  <section class="cg-popup-reality">
+    <h2>Not cached yet?</h2>
+    <p class="cg-popup-hint">
+      Highlight some Terms &amp; Conditions text yourself on any page, then
+      click below. Only the text you selected is analyzed &mdash; nothing
+      else on the page is read or sent.
+    </p>
+    <button id="cg-analyze-selection" class="cg-btn-small cg-btn-primary-small">
+      Analyze Selected Text
+    </button>
+    <div id="cg-selection-results" class="cg-selection-results"></div>
+  </section>
+
+  <footer class="cg-popup-footer">
+    Local processing only. Synthetic training data. Results may be inaccurate.
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

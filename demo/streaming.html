@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StreamBox Student - ClauseGuard Scenario</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="streaming" data-clauseguard-title="StreamBox Student">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brand. Not a real company. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <div id="cg-judge-banner" class="cg-judge-bar" style="display:none;"></div>
+
+  <header class="cg-scenario-header" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);">
+    <h1>🎬 StreamBox Student</h1>
+    <p>Streaming subscription for students</p>
+    <div class="cg-scenario-meta">
+      <span>User story: A student sees a free entertainment trial and wants to start watching immediately.</span>
+      <span>Demo tension: Free trial versus recurring subscription conditions.</span>
+    </div>
+  </header>
+
+  <div class="cg-scenario-layout">
+    <section class="cg-panel">
+      <h2>Terms and Conditions</h2>
+      <p id="cg-reading-time" class="cg-reading-time"></p>
+      <div class="cg-terms-box">
+        <p class="tc-clause" data-clause-id="1">You can cancel your StreamBox Student membership at any time from your account settings.</p>
+        <p class="tc-clause" data-clause-id="2">A confirmation email will be sent to you immediately after you cancel your membership.</p>
+        <p class="tc-clause" data-clause-id="3">You may request a copy of the personal information associated with your StreamBox account.</p>
+        <p class="tc-clause" data-clause-id="4">Your free trial automatically converts into a paid monthly subscription when the trial period ends.</p>
+        <p class="tc-clause" data-clause-id="5">After the trial period, your subscription will renew automatically each month unless you cancel.</p>
+        <p class="tc-clause" data-clause-id="6">We may change the monthly subscription price for future billing periods with prior notice.</p>
+        <p class="tc-clause" data-clause-id="7">Payments already processed are non-refundable except where required by applicable law.</p>
+        <p class="tc-clause" data-clause-id="8">Your viewing activity may be combined with advertising information to personalize promotions shown to you.</p>
+        <p class="tc-clause" data-clause-id="9">Some usage information may be retained for a period of time after you close your account.</p>
+        <p class="tc-clause" data-clause-id="10">Any dispute arising from this agreement will be resolved through individual binding arbitration.</p>
+        <p class="tc-clause" data-clause-id="11">We may suspend your account if we believe you have violated our platform rules.</p>
+      </div>
+    </section>
+
+    <aside class="cg-sidebar">
+      <div class="cg-panel cg-signup-form">
+        <h2>Create your account</h2>
+        <p style="font-size:0.78rem;color:#5b6072;">Demo only &mdash; nothing typed here is sent anywhere.</p>
+        <label for="cg-name">Display name</label>
+        <input type="text" id="cg-name" placeholder="e.g. Jordan" autocomplete="off" />
+        <label for="cg-email">Email</label>
+        <input type="email" id="cg-email" placeholder="e.g. jordan@example.com" autocomplete="off" />
+
+        <div class="cg-checkbox-row">
+          <input type="checkbox" id="cg-accept-checkbox" />
+          <label for="cg-accept-checkbox">I have reviewed the Terms and Conditions above.</label>
+        </div>
+        <p id="cg-elapsed-timer" class="cg-elapsed-timer"></p>
+        <p id="cg-review-nudge" class="cg-review-nudge"></p>
+
+        <button id="cg-primary-action" class="cg-btn cg-btn-primary" style="width:100%;margin-top:14px;" disabled>
+          Start Free Trial
+        </button>
+        <p class="cg-fine-print">
+          This fictional button never submits real data. Use the extension's
+          "Scan Terms Before Accepting" button to analyze the clauses above.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="cg-footer">
+    StreamBox Student is a fictional brand created for the ClauseGuard student hackathon prototype.
+  </footer>
+
+  <script src="demo.js"></script>
+  <script>
+    ClauseGuardDemo.initScenarioPage({});
+  </script>
+</body>
+</html>

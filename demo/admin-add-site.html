@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add a Website - ClauseGuard Admin</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .cg-admin-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 14px 0 4px;
+  }
+  .cg-admin-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d6d9e8;
+    font-size: 0.92rem;
+    box-sizing: border-box;
+  }
+  .cg-admin-hint {
+    font-size: 0.78rem;
+    color: #5b6072;
+    margin: 2px 0 0;
+  }
+  #cg-admin-result {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    display: none;
+    font-size: 0.88rem;
+  }
+  #cg-admin-result.cg-admin-ok {
+    background: #e4f7ec;
+    color: #1b8a5a;
+    display: block;
+  }
+  #cg-admin-result.cg-admin-error {
+    background: #fde2e2;
+    color: #b91c1c;
+    display: block;
+  }
+  #cg-admin-result.cg-admin-loading {
+    background: #f4f6fb;
+    color: #5b6072;
+    display: block;
+  }
+  .cg-admin-existing {
+    margin-top: 30px;
+  }
+  .cg-admin-existing ul {
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="cg-disclaimer-banner">
+    Admin tool for teachers/students &mdash; builds the local demo cache. Educational prototype.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html" class="active">Add a Website</a></li>
+    </ul>
+  </nav>
+
+  <main class="cg-container" style="max-width:560px;">
+    <section class="cg-hero" style="text-align:left;">
+      <h1>Add a real website to the demo cache</h1>
+      <p>
+        Fill in a site's Terms of Service and/or Privacy Policy URLs below.
+        ClauseGuard will open them with a real browser, pull out the
+        clause-like text, and save it so students can scan this site
+        instantly from the extension &mdash; no coding required.
+      </p>
+    </section>
+
+    <div class="cg-panel cg-admin-form">
+      <label for="cg-domain">Website domain</label>
+      <input id="cg-domain" placeholder="e.g. example.com" autocomplete="off" />
+      <p class="cg-admin-hint">Exactly as it appears in the address bar, no "https://" or "www.".</p>
+
+      <label for="cg-site-name">Site display name</label>
+      <input id="cg-site-name" placeholder="e.g. Example Inc." autocomplete="off" />
+
+      <label for="cg-terms-url">Terms of Service URL (optional)</label>
+      <input id="cg-terms-url" placeholder="https://example.com/terms" autocomplete="off" />
+
+      <label for="cg-privacy-url">Privacy Policy URL (optional)</label>
+      <input id="cg-privacy-url" placeholder="https://example.com/privacy" autocomplete="off" />
+      <p class="cg-admin-hint">At least one of the two URLs above is required.</p>
+
+      <button id="cg-admin-submit" class="cg-btn cg-btn-primary" style="width:100%; margin-top:18px;">
+        Build Cache for This Site
+      </button>
+
+      <div id="cg-admin-result"></div>
+    </div>
+
+    <section class="cg-admin-existing">
+      <h2 style="font-size:1rem;">Already cached sites</h2>
+      <ul id="cg-existing-list">
+        <li>Loading...</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const API_BASE_CANDIDATES = ["http://127.0.0.1:8000", "http://localhost:8000"];
+
+    async function fetchFromBackend(path, options) {
+      let lastError = null;
+      for (const base of API_BASE_CANDIDATES) {
+        try {
+          const response = await fetch(base + path, options);
+          const body = await response.json().catch(() => null);
+          if (!response.ok) {
+            throw new Error((body && body.detail) || `HTTP ${response.status}`);
+          }
+          return body;
+        } catch (err) {
+          lastError = err;
+        }
+      }
+      throw lastError || new Error("Unknown network error.");
+    }
+
+    async function loadExistingSites() {
+      const listEl = document.getElementById("cg-existing-list");
+      try {
+        const data = await fetchFromBackend("/realsite-cache", { method: "GET" });
+        const names = Object.entries(data.domains || {});
+        listEl.innerHTML = names.length
+          ? names.map(([domain, name]) => `<li><strong>${name}</strong> &mdash; ${domain}</li>`).join("")
+          : "<li>No sites cached yet.</li>";
+      } catch (err) {
+        listEl.innerHTML = "<li>Could not reach the local backend. Is FastAPI running?</li>";
+      }
+    }
+
+    async function submitForm() {
+      const resultEl = document.getElementById("cg-admin-result");
+      const domain = document.getElementById("cg-domain").value.trim();
+      const siteName = document.getElementById("cg-site-name").value.trim();
+      const termsUrl = document.getElementById("cg-terms-url").value.trim();
+      const privacyUrl = document.getElementById("cg-privacy-url").value.trim();
+
+      resultEl.className = "";
+      if (!domain || !siteName || (!termsUrl && !privacyUrl)) {
+        resultEl.className = "cg-admin-error";
+        resultEl.textContent = "Please fill in the domain, site name, and at least one URL.";
+        return;
+      }
+
+      resultEl.className = "cg-admin-loading";
+      resultEl.textContent = "Opening the page(s) with a real browser and extracting text... this takes about 10-20 seconds.";
+
+      try {
+        const result = await fetchFromBackend("/realsite-cache/build", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            domain,
+            site_name: siteName,
+            terms_url: termsUrl || null,
+            privacy_url: privacyUrl || null,
+          }),
+        });
+
+        if (result.cached) {
+          const counts = Object.entries(result.pages)
+            .map(([type, p]) => `${type}: ${p.clause_count ?? 0} clauses in ${p.seconds ?? "?"}s`)
+            .join(", ");
+          resultEl.className = "cg-admin-ok";
+          resultEl.textContent = `Done! Cached ${result.site_name} (${counts}). Students can now scan ${domain} from the extension.`;
+          loadExistingSites();
+        } else {
+          resultEl.className = "cg-admin-error";
+          resultEl.textContent = "Could not extract any usable text from the page(s) provided.";
+        }
+      } catch (err) {
+        resultEl.className = "cg-admin-error";
+        resultEl.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    document.getElementById("cg-admin-submit").addEventListener("click", submitForm);
+    loadExistingSites();
+  </script>
+</body>
+</html>

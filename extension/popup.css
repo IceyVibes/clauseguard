@@ -1,0 +1,148 @@
+/* ClauseGuard - popup styles */
+
+:root {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 320px;
+  color: #1b1f2a;
+  background: #f7f8fc;
+}
+
+.cg-popup-header {
+  background: linear-gradient(120deg, #4f46e5, #06b6d4);
+  color: #fff;
+  padding: 16px;
+}
+
+.cg-popup-header h1 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.cg-popup-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.72rem;
+  opacity: 0.9;
+}
+
+.cg-popup-status {
+  padding: 14px 16px;
+  background: #fff;
+  border-bottom: 1px solid #ebedf6;
+}
+
+.cg-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.cg-status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.cg-status-unknown {
+  background: #f4f6fb;
+  color: #5b6072;
+}
+
+.cg-status-online {
+  background: #e4f7ec;
+  color: #1b8a5a;
+}
+
+.cg-status-offline {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+.cg-btn-small {
+  width: 100%;
+  margin-top: 4px;
+  background: #f4f6fb;
+  border: 1px solid #e3e5f0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cg-btn-small:hover {
+  background: #ebedf6;
+}
+
+.cg-btn-primary-small {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+}
+
+.cg-btn-primary-small:hover {
+  background: #3730a3;
+}
+
+.cg-popup-instructions {
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  color: #5b6072;
+}
+
+.cg-popup-reality {
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #ebedf6;
+}
+
+.cg-popup-reality h2 {
+  font-size: 0.85rem;
+  margin: 0 0 6px;
+}
+
+.cg-popup-hint {
+  font-size: 0.72rem;
+  color: #5b6072;
+  margin: 0 0 8px;
+}
+
+.cg-selection-results {
+  margin-top: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 0.78rem;
+}
+
+.cg-selection-result-item {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ebedf6;
+}
+
+.cg-selection-result-label {
+  font-weight: 700;
+}
+
+.cg-popup-footer {
+  padding: 10px 16px;
+  font-size: 0.68rem;
+  color: #5b6072;
+  text-align: center;
+}
+
+.cg-popup-scan {
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #ebedf6;
+}
+
+.cg-popup-scan h2 {
+  font-size: 0.85rem;
+  margin: 0 0 6px;
+}

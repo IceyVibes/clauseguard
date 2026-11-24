@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comparison Dashboard - ClauseGuard</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="comparison" data-clauseguard-title="Comparison Dashboard">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brands only. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html" class="active">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <main class="cg-container">
+    <section class="cg-hero">
+      <h1>Cross-scenario comparison</h1>
+      <p>
+        The same locally trained classifier runs identically across every
+        fictional scenario. This dashboard stores only prototype summary
+        counts from each scan &mdash; never clause text or registration data.
+      </p>
+    </section>
+
+    <div id="cg-empty-state" class="cg-empty-state" style="display:none;">
+      No scans recorded yet. Open a scenario, scan the terms with the
+      extension, then return here.
+    </div>
+
+    <div id="cg-table-wrapper" class="cg-panel" style="display:none; margin-top: 20px;">
+      <table class="cg-compare-table" id="cg-compare-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Clauses reviewed</th>
+            <th>Privacy attention</th>
+            <th>Payment attention</th>
+            <th>User-rights attention</th>
+            <th>Prototype attention score</th>
+            <th>Last scanned</th>
+          </tr>
+        </thead>
+        <tbody id="cg-compare-body"></tbody>
+      </table>
+    </div>
+
+    <div style="display:flex; gap: 14px; margin-top: 24px; justify-content: center;">
+      <button id="cg-reset-btn" class="cg-btn cg-btn-secondary">Reset Demo Results</button>
+      <a href="index.html" class="cg-btn cg-btn-primary">Return to Scenario Gallery</a>
+    </div>
+
+    <p style="text-align:center; color:#5b6072; font-size:0.82rem; margin-top: 30px;">
+      Comparison results are produced by a student prototype trained on
+      synthetic examples. They do not measure the actual legality or
+      fairness of a service.
+    </p>
+  </main>
+
+  <script src="demo.js"></script>
+  <script>
+    function pct(n) { return Math.round(n * 100) / 100; }
+
+    function render() {
+      const results = ClauseGuardDemo.readScanResults();
+      const emptyEl = document.getElementById("cg-empty-state");
+      const wrapperEl = document.getElementById("cg-table-wrapper");
+      const bodyEl = document.getElementById("cg-compare-body");
+
+      if (!results.length) {
+        emptyEl.style.display = "block";
+        wrapperEl.style.display = "none";
+        return;
+      }
+
+      emptyEl.style.display = "none";
+      wrapperEl.style.display = "block";
+      bodyEl.innerHTML = "";
+
+      results.forEach((r) => {
+        const row = document.createElement("tr");
+        const scorePct = pct(r.attentionPercentage);
+        row.innerHTML = `
+          <td>${r.scenarioTitle}</td>
+          <td>${r.totalClauses}</td>
+          <td>
+            ${r.categoryCounts.privacy_attention}
+            <div class="cg-bar-track"><div class="cg-bar-fill privacy" style="width:${(r.categoryCounts.privacy_attention / r.totalClauses) * 100}%;"></div></div>
+          </td>
+          <td>
+            ${r.categoryCounts.payment_attention}
+            <div class="cg-bar-track"><div class="cg-bar-fill payment" style="width:${(r.categoryCounts.payment_attention / r.totalClauses) * 100}%;"></div></div>
+          </td>
+          <td>
+            ${r.categoryCounts.user_rights_attention}
+            <div class="cg-bar-track"><div class="cg-bar-fill rights" style="width:${(r.categoryCounts.user_rights_attention / r.totalClauses) * 100}%;"></div></div>
+          </td>
+          <td>${scorePct}%</td>
+          <td>${new Date(r.timestamp).toLocaleString()}</td>
+        `;
+        bodyEl.appendChild(row);
+      });
+    }
+
+    document.getElementById("cg-reset-btn").addEventListener("click", () => {
+      ClauseGuardDemo.clearScanResults();
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

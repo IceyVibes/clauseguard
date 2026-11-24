@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hackathon Presentation - ClauseGuard</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="presentation" data-clauseguard-title="Hackathon Presentation">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brands only. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html" class="active">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <main class="cg-container">
+    <section class="cg-presentation-section">
+      <h2>Problem</h2>
+      <h3>Registration takes seconds. Reading the agreement takes minutes.</h3>
+      <p>
+        Digital services make joining easy, but agreements may contain
+        recurring payments, information-sharing permissions, dispute
+        restrictions and account-control provisions that users may not
+        notice before accepting.
+      </p>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>Idea</h2>
+      <p>
+        ClauseGuard provides an attention layer before acceptance. It
+        identifies individual clauses that resemble patterns in the
+        student-created training dataset and shows which categories may
+        deserve review.
+      </p>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>Student ML journey</h2>
+      <div class="cg-flow-steps">
+        <span>Create synthetic data</span>
+        <span>→</span>
+        <span>Label clauses</span>
+        <span>→</span>
+        <span>Generate MiniLM embeddings</span>
+        <span>→</span>
+        <span>Train Logistic Regression</span>
+        <span>→</span>
+        <span>Measure performance</span>
+        <span>→</span>
+        <span>Save model</span>
+        <span>→</span>
+        <span>Serve through FastAPI</span>
+        <span>→</span>
+        <span>Integrate browser extension</span>
+      </div>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>Why the demo is interesting</h2>
+      <ul>
+        <li>Students create and label training data.</li>
+        <li>Students train and evaluate their own classifier.</li>
+        <li>No paid AI inference API.</li>
+        <li>Inference can run locally.</li>
+        <li>Browser extension works across multiple fictional websites.</li>
+        <li>Findings point to original displayed clauses.</li>
+        <li>Results include measured model confidence.</li>
+        <li>Form data is not sent for analysis.</li>
+      </ul>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>Responsible AI</h2>
+      <ul>
+        <li>Synthetic training data</li>
+        <li>No legal conclusions</li>
+        <li>Confidence is model confidence, not legal certainty</li>
+        <li>False positives are possible</li>
+        <li>False negatives are possible</li>
+        <li>Human review remains necessary</li>
+        <li>Local processing</li>
+        <li>No registration-form data is analyzed</li>
+      </ul>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>Future version</h2>
+      <ul>
+        <li>Larger expert-reviewed dataset</li>
+        <li>Domain-specific model evaluation</li>
+        <li>Multilingual support</li>
+        <li>Improved clause extraction</li>
+        <li>Jurisdiction-aware explanation layer</li>
+        <li>Model comparison</li>
+        <li>Bias and robustness testing</li>
+        <li>User feedback/correction</li>
+        <li>Privacy-preserving on-device inference</li>
+      </ul>
+    </section>
+
+    <section class="cg-presentation-section">
+      <h2>The offer is designed to be noticed. The agreement still needs attention.</h2>
+      <div class="cg-contrast-grid">
+        <div class="cg-contrast-col left">
+          <h3>What gets your attention</h3>
+          <ul>
+            <li>Free trial</li>
+            <li>Free delivery</li>
+            <li>Free storage</li>
+            <li>Bonus credits</li>
+            <li>Course certificate</li>
+          </ul>
+        </div>
+        <div class="cg-contrast-col right">
+          <h3>What may need review</h3>
+          <ul>
+            <li>Automatic renewal</li>
+            <li>Information sharing</li>
+            <li>Refund limitations</li>
+            <li>Arbitration</li>
+            <li>Account termination</li>
+            <li>Content licences</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cg-footer">
+    "ClauseGuard does not replace reading the agreement. It gives users a reason to pause and shows them where to begin."
+  </footer>
+</body>
+</html>

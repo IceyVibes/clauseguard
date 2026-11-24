@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkillSpring Academy - ClauseGuard Scenario</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-clauseguard-scenario="student-learning" data-clauseguard-title="SkillSpring Academy">
+  <div class="cg-disclaimer-banner">
+    Fictional demo brand. Not a real company. Educational prototype &mdash; not legal advice.
+  </div>
+  <nav class="cg-nav">
+    <a class="cg-logo" href="index.html">🛡️ ClauseGuard</a>
+    <ul class="cg-nav-links">
+      <li><a href="index.html">Scenario Lab</a></li>
+      <li><a href="comparison.html">Comparison Dashboard</a></li>
+      <li><a href="admin-add-site.html">Add a Website</a></li>
+      <li><a href="presentation.html">Hackathon Presentation</a></li>
+    </ul>
+  </nav>
+
+  <div id="cg-judge-banner" class="cg-judge-bar" style="display:none;"></div>
+
+  <header class="cg-scenario-header" style="background: linear-gradient(135deg, #434343 0%, #1a2980 50%, #26d0ce 100%);">
+    <h1>🎓 SkillSpring Academy</h1>
+    <p>Online learning and certification</p>
+    <div class="cg-scenario-meta">
+      <span>User story: A student enrolls in an online course to earn a certificate.</span>
+      <span>Demo tension: Certificate goal versus recurring charges, engagement data and course-control terms.</span>
+    </div>
+  </header>
+
+  <div class="cg-scenario-layout">
+    <section class="cg-panel">
+      <h2>Terms and Conditions</h2>
+      <p id="cg-reading-time" class="cg-reading-time"></p>
+      <div class="cg-terms-box">
+        <p class="tc-clause" data-clause-id="1">You can track your course progress at any time from your learning dashboard.</p>
+        <p class="tc-clause" data-clause-id="2">Marketing emails can be turned off from your notification preferences.</p>
+        <p class="tc-clause" data-clause-id="3">You may correct your profile information at any time.</p>
+        <p class="tc-clause" data-clause-id="4">Your course activity may be used to recommend additional lessons and courses.</p>
+        <p class="tc-clause" data-clause-id="5">Engagement information may be shared with education partners to improve course content.</p>
+        <p class="tc-clause" data-clause-id="6">Some learning activity information may be retained after you complete a course.</p>
+        <p class="tc-clause" data-clause-id="7">The introductory price applies only to your first enrollment period.</p>
+        <p class="tc-clause" data-clause-id="8">Your learning plan renews automatically at the end of each billing period unless cancelled.</p>
+        <p class="tc-clause" data-clause-id="9">Certificate-processing fees are non-refundable once a certificate has been issued.</p>
+        <p class="tc-clause" data-clause-id="10">Course content and assessments may be changed or updated at any time.</p>
+        <p class="tc-clause" data-clause-id="11">Certificates may be withheld if an academic integrity violation is identified.</p>
+        <p class="tc-clause" data-clause-id="12">Submitted projects may be used in an anonymised form for educational demonstrations.</p>
+      </div>
+    </section>
+
+    <aside class="cg-sidebar">
+      <div class="cg-panel cg-signup-form">
+        <h2>Create your account</h2>
+        <p style="font-size:0.78rem;color:#5b6072;">Demo only &mdash; nothing typed here is sent anywhere.</p>
+        <label for="cg-name">Display name</label>
+        <input type="text" id="cg-name" placeholder="e.g. Jordan" autocomplete="off" />
+        <label for="cg-email">Email</label>
+        <input type="email" id="cg-email" placeholder="e.g. jordan@example.com" autocomplete="off" />
+
+        <div class="cg-checkbox-row">
+          <input type="checkbox" id="cg-accept-checkbox" />
+          <label for="cg-accept-checkbox">I have reviewed the Terms and Conditions above.</label>
+        </div>
+        <p id="cg-elapsed-timer" class="cg-elapsed-timer"></p>
+        <p id="cg-review-nudge" class="cg-review-nudge"></p>
+
+        <button id="cg-primary-action" class="cg-btn cg-btn-primary" style="width:100%;margin-top:14px;" disabled>
+          Enrol and Start Learning
+        </button>
+        <p class="cg-fine-print">
+          This fictional button never submits real data. Use the extension's
+          "Scan Terms Before Accepting" button to analyze the clauses above.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="cg-footer">
+    SkillSpring Academy is a fictional brand created for the ClauseGuard student hackathon prototype.
+  </footer>
+
+  <script src="demo.js"></script>
+  <script>
+    ClauseGuardDemo.initScenarioPage({});
+  </script>
+</body>
+</html>
