@@ -68,8 +68,6 @@ if "%CHROME_EXE%"=="" (
 echo Launching Chrome with ClauseGuard already loaded ^(separate temporary profile^) ...
 start "" "%CHROME_EXE%" ^
   --user-data-dir="%TEMP%\ClauseGuardChromeProfile" ^
-  --disable-extensions-except="%~dp0extension" ^
-  --load-extension="%~dp0extension" ^
   --no-first-run --no-default-browser-check ^
   "http://127.0.0.1:5500/index.html"
 
