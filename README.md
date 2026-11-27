@@ -114,7 +114,8 @@ python -m pip install --upgrade pip
 pip install -r backend\requirements.txt
 pip install playwright && playwright install chromium
 python backend\scripts\train_model.py
-uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+start_windows.bat
+#uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
 
 ```
 
